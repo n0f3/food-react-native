@@ -17,5 +17,7 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["react", "react-native"],
-  rules: {},
+  rules: {
+    "react/prop-types": 0,
+  },
 };

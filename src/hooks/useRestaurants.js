@@ -12,12 +12,14 @@ export default () => {
       const response = await yelp.get("/search", {
         params: {
           limit: 50,
-          searchTerm,
+          term: searchTerm,
           location: "new york city",
         },
       });
       setRestaurants(response.data.businesses);
+      setErrorMessage("");
     } catch (err) {
+      console.error(err);
       setErrorMessage("Something went wrong");
     }
   };
